@@ -1,0 +1,62 @@
+<html> 
+<head>
+<title>Feedback Form</title>
+<link rel="stylesheet" type="text/css" href="val.css">
+</head>
+<body bgcolor="magenda">
+<div class="container">
+	<h1>Feedback Form</h1>
+<form action="/myaction.php" name="myForm"  onsubmit="return validateForm()" method="post">
+			<table>
+				<div class="formdesign" id="name" >
+				<tr>
+					<td><label for ="name"> First Name:</label></td>
+					<td><input type="text" name="fname" id="fname" placeholder="your first name"><b><span class="formerror"></span></b></td>
+				</tr>
+				</div>
+				<tr>
+					<td><label for ="name"> Last Name:</label></td>
+					<td><input type="text" name="last name" id="last name" placeholder="your last name" required><b><span class="formerror"></span></b></td>
+				</tr>
+				<tr>
+					<td><label for="Email">Email:</label></td>
+					<td><input type="text" name="email" id="email" placeholder="your email" required><b><span class="formerror"></span></b></td>
+				</tr>
+
+				<tr>
+					<td><label for="about">Feedback:</lable></td>
+					<td><textarea name="Feedback" id="feedback"placeholder="Write about yourself..." required></textarea><b><span class="formerror"></span></b></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="submit" class="submit" value="Submit"/>  &nbsp  &nbsp &nbsp &nbsp<input type="reset" class="reset" value="Reset"></td>
+				</tr>
+			</table>
+
+</form>
+</div>
+</body>
+
+	<script type="text/javascript">
+
+		function seterror(id,error) {
+			element = document.getElementById(id);
+			element.getElementsByClassName('formerror')[0].innerHTML = error;
+
+			
+		}
+
+		function validateForm() {
+			
+			var returnval = true;
+			var name = document.forms['myForm']["fname"].value;
+			if (name.length<5) {
+				seterror("name","Length of name is too short");
+			}
+
+			return returnval;
+
+		}
+		
+	</script>
+
+</html>
