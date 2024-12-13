@@ -8,7 +8,7 @@
 
  	width: 100%; height: 100vh;
  	background-image: linear-gradient(rgb(0,0,0,0.3),rgb(0,0,0,0.1));
- 	background-image: url("/image/taj4.jpg");
+ 	background-image: url(taj4.jpg);
  	background-repeat: no-repeat;
  	background-size: cover;
 
